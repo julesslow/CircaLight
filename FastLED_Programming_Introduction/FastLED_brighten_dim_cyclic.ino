@@ -74,7 +74,7 @@ void loop() {
     }
     if (dist < 0) Serial.println("timeout/no echo");
     else Serial.println(dist, 2);
-  } elif (wait_count==max_count){
+  } else if (wait_count==max_count){
     wait_count=0; // reset and end wait timer
   } else{
     wait_count++;
