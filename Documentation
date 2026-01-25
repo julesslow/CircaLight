@@ -1,20 +1,19 @@
-# INITIAL ATTEMPT
+INITIAL ATTEMPT
 
-We started with the intent to follow the DigiKey Track, with our project centered around
-a dynamic house lighting system based on the amount of sunlight outside. 
-The purpose was to help improve peoples circadian rythm and improve life balance. 
-
-We tried using a Audrino Uno R3 Board with a Qwiic Shield. However, when we tried using the Qwiic human presence sensor,
-it did not work with the board set up. We tried getting help by doing to the parts room but after they tried helping us for
-about half an hour, they adviced us to pivot since Qwiic equipment was required for the DigiKey track.
-
-# PIVOTING 
-
-Since our project helped improve life balance by improving ones circadian rythm, we decied to pursue
-the intermediate, Healthcare track. Since we could also not use the doll house from the DigiKey track, we decided to 
-lazer cut our own house. 
-
-We still chose to use a Audrino Uno R3 board, with ultrasound sensors as movement sensors and photo resistors as light sensors. 
-We sautred our LED strips, our photo resistors and our ultrasound sensors. 
+We initially planned to follow the DigiKey Track, centering our project around a 
+dynamic house lighting system that adjusts indoor lighting based on the amount of sunlight outside.
+The goal of this system was to help improve people’s circadian rhythms and promote better life balance.
+We attempted to use an Arduino Uno R3 with a Qwiic Shield and a Qwiic human presence sensor. 
+However, we encountered compatibility issues with this setup, and the sensor did not function correctly with our board configuration.
+After seeking help in the parts room and troubleshooting for approximately thirty minutes, we were advised to pivot our project, 
+as Qwiic-based equipment was required to properly complete the DigiKey track.
 
 
+PIVOTING
+
+Because our project still focused on improving health and life balance through circadian rhythm regulation, 
+we decided to pursue the Intermediate Healthcare Track instead. Additionally, since we could no longer use the 
+dollhouse provided by the DigiKey track, we chose to laser cut our own house structure.
+For the revised design, we continued using an Arduino Uno R3, but replaced the Qwiic sensor with ultrasonic-
+sensors to detect movement and photoresistors to measure ambient light levels. We soldered the LED strips, photoresistors, 
+and ultrasonic sensors to complete the hardware setup for our system.
