@@ -1,1 +1,6 @@
+# INITIAL ATTEMPT
 
+We started with the intent to follow the DigiKey Track, without our project centered around a dynamic house lighting system based on the amount of sunlight outside. 
+The purpose was to help improve peoples circadian rythm and improve life balance. 
+
+We tried using a Audrino Uno R3 Board with a Qwiic Shield. 
