@@ -75,3 +75,10 @@ as we finalized the physical assembly of the system.
 The system now successfully integrates LED lighting, a photoresistor for ambient light detection, 
 and an ultrasonic distance sensor for occupancy detection within the laser-cut house. Ongoing work focuses on final physical assembly,
 wire management, and refining thresholds to further improve reliability and responsiveness.
+
+## LESSONS LEARNED
+
+This project reinforced the importance of isolating operations when building and debugging hardware systems, as testing individual 
+components made it easier to identify issues. We also learned to always connect power and ground first to ensure stable behavior and 
+avoid electrical problems. Finally, the experience highlighted the value of being flexible and willing to pivot when an initial approach 
+does not work, allowing progress toward the overall project goal.
