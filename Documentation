@@ -1,6 +1,20 @@
 # INITIAL ATTEMPT
 
-We started with the intent to follow the DigiKey Track, without our project centered around a dynamic house lighting system based on the amount of sunlight outside. 
+We started with the intent to follow the DigiKey Track, with our project centered around
+a dynamic house lighting system based on the amount of sunlight outside. 
 The purpose was to help improve peoples circadian rythm and improve life balance. 
 
-We tried using a Audrino Uno R3 Board with a Qwiic Shield. 
+We tried using a Audrino Uno R3 Board with a Qwiic Shield. However, when we tried using the Qwiic human presence sensor,
+it did not work with the board set up. We tried getting help by doing to the parts room but after they tried helping us for
+about half an hour, they adviced us to pivot since Qwiic equipment was required for the DigiKey track.
+
+# PIVOTING 
+
+Since our project helped improve life balance by improving ones circadian rythm, we decied to pursue
+the intermediate, Healthcare track. Since we could also not use the doll house from the DigiKey track, we decided to 
+lazer cut our own house. 
+
+We still chose to use a Audrino Uno R3 board, with ultrasound sensors as movement sensors and photo resistors as light sensors. 
+We sautred our LED strips, our photo resistors and our ultrasound sensors. 
+
+
