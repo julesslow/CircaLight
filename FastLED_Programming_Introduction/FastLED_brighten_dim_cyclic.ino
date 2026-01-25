@@ -2,8 +2,8 @@
 #include <math.h>
 
 
-#define LED_PIN     5
-#define NUM_LEDS    3
+#define LED_PIN     3
+#define NUM_LEDS    43
 #define LED_TYPE    WS2812B
 #define COLOR_ORDER GRB
 
@@ -149,4 +149,3 @@ void loop() {
  }
  FastLED.show();
 }
-
