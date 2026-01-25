@@ -11,6 +11,9 @@
 
 int brightness = 100;
 bool dim = 1;
+bool here = 1;
+int wait_count = 0; //count until they check if the door has been opened again
+int max_count = 50;
 CRGB leds[NUM_LEDS];
 
 void setup() {
@@ -62,11 +65,21 @@ void loop() {
   Serial.print("Light: ");
   Serial.println(readLight);
 
-  float dist = readDistanceCM();
-  Serial.print("Distance (cm): ");
-  if (dist < 0) Serial.println("timeout/no echo");
-  else Serial.println(dist, 2);
-
+  if (wait_count==0){ // only check distance after the wait timer has finished
+    float dist = readDistanceCM();
+    Serial.print("Distance (cm): ");
+    if (dist > 15){
+      here = !here;
+      wait_count++;
+    }
+    if (dist < 0) Serial.println("timeout/no echo");
+    else Serial.println(dist, 2);
+  } elif (wait_count==max_count){
+    wait_count=0; // reset and end wait timer
+  } else{
+    wait_count++;
+  }
+    
   FastLED.setBrightness(brightness);
   FastLED.show();
 
