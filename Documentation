@@ -1,19 +1,77 @@
-INITIAL ATTEMPT
+## INITIAL ATTEMPT
 
-We initially planned to follow the DigiKey Track, centering our project around a 
-dynamic house lighting system that adjusts indoor lighting based on the amount of sunlight outside.
-The goal of this system was to help improve people’s circadian rhythms and promote better life balance.
-We attempted to use an Arduino Uno R3 with a Qwiic Shield and a Qwiic human presence sensor. 
-However, we encountered compatibility issues with this setup, and the sensor did not function correctly with our board configuration.
-After seeking help in the parts room and troubleshooting for approximately thirty minutes, we were advised to pivot our project, 
-as Qwiic-based equipment was required to properly complete the DigiKey track.
+We initially planned to follow the DigiKey Track, centering our project around a dynamic house lighting system 
+that adjusts indoor lighting based on the amount of sunlight outside. The goal of this system was to help improve 
+people’s circadian rhythms and promote better life balance. We attempted to use an Arduino Uno R3 with a Qwiic Shield 
+and a Qwiic human presence sensor. However, we encountered compatibility issues with this setup, and the sensor did not
+function correctly with our board configuration. After seeking help in the parts room and troubleshooting for approximately
+thirty minutes, we were advised to pivot our project, as Qwiic-based equipment was required to properly complete the DigiKey track.
 
 
-PIVOTING
+
+## PIVOTING
 
 Because our project still focused on improving health and life balance through circadian rhythm regulation, 
-we decided to pursue the Intermediate Healthcare Track instead. Additionally, since we could no longer use the 
-dollhouse provided by the DigiKey track, we chose to laser cut our own house structure.
-For the revised design, we continued using an Arduino Uno R3, but replaced the Qwiic sensor with ultrasonic-
-sensors to detect movement and photoresistors to measure ambient light levels. We soldered the LED strips, photoresistors, 
+we decided to pursue the Intermediate Healthcare Track instead. Additionally, since we could no longer use 
+the dollhouse provided by the DigiKey track, we chose to laser cut our own house structure. For the revised 
+design, we continued using an Arduino Uno R3, but replaced the Qwiic sensor with ultrasonic distance sensors 
+to detect presence and photoresistors to measure ambient light levels. We soldered the LED strips, photoresistors, 
 and ultrasonic sensors to complete the hardware setup for our system.
+
+
+
+## PROCEDURE AND ITERATIVE DEVELOPMENT
+
+### LED Strip Assembly and Layout Changes
+
+Initially, we soldered approximately eight short LED strips together, each consisting of three LEDs cut from a 
+circular LED strip. When we attempted to test this configuration using the Arduino, the LEDs no longer turned on. 
+We concluded that this issue was most likely caused by faulty soldering connections or excessive stress on the LED pads during assembly.
+
+To address this, we redesigned the lighting layout to be simpler and more reliable. Instead of multiple small segments, 
+we reduced the system to two longer LED strips placed along the edges of the two rooms in the house model. These strips 
+were carefully soldered and tested individually before being integrated, which significantly improved reliability and made debugging easier.
+
+
+
+### Distance Sensor Placement and Behavior Tuning
+
+While working on the ultrasonic distance sensor, we decided to mount it directly in front of the door of the house. 
+This placement allowed the sensor to more accurately detect when someone entered or exited the space. However, achieving 
+correct behavior required multiple iterations of code adjustments.
+
+We refined the logic used to interpret distance readings so the system could distinguish between the door being briefly 
+opened versus someone actually entering the room. Through repeated testing, we were able to correctly detect when the door 
+remained open or closed long enough to indicate occupancy, allowing the lights to turn on when someone entered and turn off 
+when the space was vacant.
+
+
+
+### Photoresistor Calibration and Gradual Brightness Control
+
+During testing, we noticed that the LED brightness changes in response to the photoresistor readings were either too abrupt
+or not visually noticeable. To solve this issue, we implemented a calibration strategy that divided photoresistor readings into defined ranges.
+
+Each range of ambient light values was mapped to a corresponding LED brightness level. This approach allowed the lights
+to adjust more smoothly and gradually as outdoor light conditions changed, creating a more natural and comfortable indoor
+lighting experience that better aligned with circadian rhythm goals.
+
+
+
+### Final Integration and Power Considerations
+
+At the current stage, we are integrating the complete system into the laser-cut house structure. During this process, 
+we evaluated different power options for the Arduino and components. We determined that powering the board directly from 
+a computer via USB was the most stable and reliable option. Battery power proved inconsistent, as some configurations 
+supplied too little voltage while others risked supplying too much, leading to unreliable behavior.
+
+Using a computer-based power source ensured consistent voltage delivery and allowed for easier testing and debugging
+as we finalized the physical assembly of the system.
+
+
+
+## CURRENT STATUS
+
+The system now successfully integrates LED lighting, a photoresistor for ambient light detection, 
+and an ultrasonic distance sensor for occupancy detection within the laser-cut house. Ongoing work focuses on final physical assembly,
+wire management, and refining thresholds to further improve reliability and responsiveness.
