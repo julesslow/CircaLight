@@ -7,8 +7,9 @@
 int brightness = 100;
 bool dim = 1;
 CRGB leds[NUM_LEDS];
-
+int readLight = 0;
 void setup() {
+  Serial.begin(115200);
   delay(300);
   FastLED.addLeds<LED_TYPE, LED_PIN, COLOR_ORDER>(leds, NUM_LEDS);
   FastLED.setBrightness(brightness);
@@ -20,11 +21,15 @@ void setup() {
   }
 
   FastLED.show();
+  pinMode(A0, INPUT);
 }
 
 void loop() {
   delay(500);
   Serial.println("hi!");
+  int readLight = analogRead(A0);
+  Serial.print("Light: ");
+  Serial.println(readLight);
   FastLED.setBrightness(brightness);
   FastLED.show();
   if (brightness==0){
@@ -38,9 +43,5 @@ void loop() {
   } else {
     brightness+=5;
   }
+  
 }
-
-
-
-
-
