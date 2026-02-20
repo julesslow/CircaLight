@@ -1,6 +1,8 @@
 # CircaLight
 Mini smart house that implements circadian lighting. It is designed to show how lighting systems can adapt to human biological rhythms to enhance comfort, well-being, and productivity.
 
+![circalight](https://github.com/user-attachments/assets/9a82a2cd-8164-4d5d-8321-1da3bf5d9b0b)
+
 # Set Up
 Download Arduino IDE, go to tools, manage libraries, search "FastLED version 3.10.3" and add the library.
 
